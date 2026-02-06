@@ -1,0 +1,19 @@
+// Last updated: 06/02/2026, 22:45:46
+class Solution {
+    public boolean isTrionic(int[] nums) 
+    {
+        if(nums.length < 4) return false;
+        
+        int i = 1;
+        int n = nums.length;
+
+        while (i<n && nums[i] > nums[i-1]) i++;
+        if(i==1) return false;
+
+        while (i<n && nums[i] < nums[i-1]) i++;
+        if(i==n) return false;
+
+        while (i<n && nums[i] > nums[i-1]) i++;
+        return i==n;
+    }
+}
